@@ -8,6 +8,8 @@ import img1 from "./assets/images/img-1.jpg";
 import img2 from "./assets/images/img-2.jpg";
 import img3 from "./assets/images/img-3.jpg";
 import img4 from "./assets/images/img-4.jpg";
+import left from "./assets/images/left.png";
+import right from "./assets/images/right.png";
 
 function App() {
   console.log("App 확인");
@@ -43,16 +45,40 @@ function App() {
 
   let work = works.find(item => item.id === id);
 
+  const handlePrev = () => {
+    if (id > 1) {
+      setId(id - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (id < works.length) {
+      setId(id + 1);
+    }
+  };
+
   return (
     <>
-      <Header /> 
+      <Header />
       <Nav
+        id={id}
         data={works}
         onChangeMode={id => {
           setId(id);
         }}
-      /> 
+      />
+
       {work && <Figure data={work} />}
+
+      <div>
+        <button onClick={handlePrev}>
+          <img src={left} alt="이전" />
+        </button>
+
+        <button onClick={handleNext}>
+          <img src={right} alt="다음" />
+        </button>
+      </div>
     </>
   );
 }

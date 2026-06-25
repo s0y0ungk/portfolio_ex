@@ -41,18 +41,46 @@ function App() {
       url: img4,
       desc: "커피 사진",
     },
+    {
+      id: 5,
+      title: "Coffee 5",
+      url: img1,
+      desc: "커피 사진",
+    },
+    {
+      id: 6,
+      title: "Coffee 6",
+      url: img2,
+      desc: "커피 사진",
+    },
+    {
+      id: 7,
+      title: "Coffee 7",
+      url: img3,
+      desc: "커피 사진",
+    },
+    {
+      id: 8,
+      title: "Coffee 8",
+      url: img4,
+      desc: "커피 사진",
+    },
   ];
 
   let work = works.find(item => item.id === id);
 
   const handlePrev = () => {
-    if (id > 1) {
+    if (id === 1) {
+      setId(works.length);
+    } else {
       setId(id - 1);
     }
   };
 
   const handleNext = () => {
-    if (id < works.length) {
+    if (id === works.length) {
+      setId(1);
+    } else {
       setId(id + 1);
     }
   };

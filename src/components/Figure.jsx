@@ -1,4 +1,12 @@
-  <figure>
-    <img alt="img-1" src="images/img-1.jpg"/>
-    <figcaption>Work 1 description</figcaption>
-  </figure>
+function Figure() {
+  console.log("Figure render");
+
+  return (
+    <figure>
+      <img src="" alt="img-1" />
+      <figcaption>Work 1 description</figcaption>
+    </figure>
+  );
+}
+
+export default Figure;

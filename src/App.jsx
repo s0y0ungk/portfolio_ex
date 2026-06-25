@@ -47,7 +47,7 @@ function App() {
     <>
       <Header />
       <Nav
-        data={works}
+        data={work && <Figure data={work} />}
         onChangeMode={id => {
           setId(id);
         }}

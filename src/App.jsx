@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Figure from "./components/Figure";
@@ -11,40 +12,44 @@ import img4 from "./assets/images/img-4.jpg";
 function App() {
   console.log("App render");
 
+  const [id, setId] = useState(1);
+
   let works = [
     {
       id: 1,
-      title: "work 1",
+      title: "Coffee 1",
       url: img1,
-      desc: "Work 1 description",
+      desc: "커피 사진",
     },
     {
       id: 2,
-      title: "work 2",
+      title: "Coffee 2",
       url: img2,
-      desc: "Work 2 description",
+      desc: "커피 사진",
     },
     {
       id: 3,
-      title: "work 3",
+      title: "Coffee 3",
       url: img3,
-      desc: "Work 3 description",
+      desc: "커피 사진",
     },
     {
       id: 4,
-      title: "work 4",
+      title: "Coffee 4",
       url: img4,
-      desc: "Work 4 description",
+      desc: "커피 사진",
     },
   ];
+  
+  let work = works.find(item => item.id === id);
 
-  return (
-    <>
-      <Header />
-      <Nav data={works} />
-      <Figure />
-    </>
-  );
+return (
+  <>
+    <Header />
+    <Nav data={works} />
+    <Figure data={work} />
+  </>
+);
 }
 
 export default App;

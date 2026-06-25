@@ -1,10 +1,10 @@
-function Figure() {
+function Figure({ data }) {
   console.log("Figure render");
 
   return (
     <figure>
-      <img src="" alt="img-1" />
-      <figcaption>Work 1 description</figcaption>
+      <img src={data.url} alt={data.title} />
+      <figcaption>{data.desc}</figcaption>
     </figure>
   );
 }

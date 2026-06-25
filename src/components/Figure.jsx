@@ -1,5 +1,5 @@
 function Figure({ data }) {
-  console.log("Figure render");
+  console.log("Figure 확인");
 
   const { url, desc } = data;
 

@@ -41,8 +41,6 @@ function App() {
     },
   ];
 
-  let work = works.find(item => item.id === id);
-
   return (
     <>
       <Header />

@@ -1,5 +1,5 @@
 function Header() {
-  console.log("Header render");
+  console.log("Header 확인");
 
   return (
     <header>

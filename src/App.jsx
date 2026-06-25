@@ -10,7 +10,7 @@ import img3 from "./assets/images/img-3.jpg";
 import img4 from "./assets/images/img-4.jpg";
 
 function App() {
-  console.log("App render");
+  console.log("App 확인");
 
   const [id, setId] = useState(1);
 
@@ -40,16 +40,21 @@ function App() {
       desc: "커피 사진",
     },
   ];
-  
+
   let work = works.find(item => item.id === id);
 
-return (
-  <>
-    <Header />
-    <Nav data={works} />
-    <Figure data={work} />
-  </>
-);
+  return (
+    <>
+      <Header />
+      <Nav
+        data={works}
+        onChangeMode={id => {
+          setId(id);
+        }}
+      />
+      <Figure data={work} />
+    </>
+  );
 }
 
 export default App;

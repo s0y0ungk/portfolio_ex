@@ -45,14 +45,14 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header /> 
       <Nav
-        data={work && <Figure data={work} />}
+        data={works}
         onChangeMode={id => {
           setId(id);
         }}
-      />
-      <Figure data={work} />
+      /> 
+      {work && <Figure data={work} />}
     </>
   );
 }

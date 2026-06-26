@@ -1,6 +1,4 @@
 function Header() {
-  console.log("Header 확인");
-
   return (
     <header>
       <h1>My works</h1>

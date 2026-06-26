@@ -1,16 +1,19 @@
-function Nav({ data, onChangeMode }) {
+import "./Nav.css";
+
+function Nav({ data, activeId, onChangeMode }) {
   return (
     <nav>
-      <ul>
+      <ul className="menu">
         {data.map(work => (
           <li
             key={work.id}
+            className={activeId===work.id ? "active" : ""}
             onClick={e => {
               e.preventDefault();
               onChangeMode(work.id);
             }}
           >
-            <a href="">{work.title}</a>
+            <button aria-current={activeId === work.id ? true : false}>{work.title}</button>
           </li>
         ))}
       </ul>

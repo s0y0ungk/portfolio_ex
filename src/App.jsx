@@ -59,7 +59,10 @@ function App() {
     },
   ];
 
-  const work = works.find((w) => w.id === id);
+  const work = works.find(w => w.id === id);
+  const activeIndex = works.findIndex(w => w.id === id);
+  const prevWork = activeIndex > 0 ? works[activeIndex - 1] : null;
+  const nextWork = activeIndex < works.length - 1 ? works[activeIndex + 1] : null;
 
   return (
     <>
@@ -72,7 +75,13 @@ function App() {
         }}
       />
       {work && <Figure data={work} />}
-      <Controls />
+      <Controls
+        prevWork={prevWork}
+        nextWork={nextWork}
+        onChangeMode={_id => {
+          setId(_id);
+        }}
+      />
     </>
   );
 }

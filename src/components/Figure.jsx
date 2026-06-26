@@ -1,11 +1,10 @@
 function Figure({ data }) {
-  console.log("Figure 확인");
 
   const { url, desc } = data;
 
   return (
     <figure>
-      <img src={url} alt={desc} />
+      <img src={data.url} alt={data.desc} />
       <figcaption>{desc}</figcaption>
     </figure>
   );
